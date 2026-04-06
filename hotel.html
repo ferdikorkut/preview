@@ -1,0 +1,863 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mercans Hotel</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <div class="logo">
+          <a href="#!"><i class="bi bi-star-fill"></i> MercanS</a>
+        </div>
+
+        <nav class="main-nav">
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#home">Features</a></li>
+            <li><a href="#home">Rooms</a></li>
+            <li><a href="#home">Gallery</a></li>
+            <li><a href="#home">Services</a></li>
+            <li><a href="#home">Blog</a></li>
+            <li><a href="#home">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="booking-button">
+          <a href="#!">Booking</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="sec-hero">
+        <div class="container">
+          <div class="small-title">Hotel & Resort</div>
+          <h1>The Coolest Hotel And Resort</h1>
+          <p>
+            Experience a premium seaside escape with elegant rooms, curated
+            amenities, ocean views and a clean luxury atmosphere designed for
+            modern travelers.
+          </p>
+          <div class="buttons">
+            <a href="#!" class="btn-pr">Book A Room</a>
+            <a href="#!" class="btn-sc">Explore Rooms</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="sec-booking">
+        <div class="container">
+          <div class="booking-form">
+            <form class="form-reg" action="#!" method="POST">
+              <div class="booking-item">
+                <label for="in">Check In</label>
+                <input type="date" name="in" id="in" />
+              </div>
+              <div class="booking-item">
+                <label for="out">Check Out</label>
+                <input type="date" name="out" id="out" />
+              </div>
+              <div class="booking-item">
+                <label for="rooms">Rooms</label>
+                <select class="form-select" name="rooms" id="rooms">
+                  <option value="1">1 Rooms</option>
+                  <option value="2">2 Rooms</option>
+                  <option value="3">3 Rooms</option>
+                </select>
+              </div>
+              <div class="booking-item">
+                <label for="adults">Adults</label>
+                <select class="form-select" name="adults" id="adults">
+                  <option value="2">2 Adults</option>
+                  <option value="3">3 Adults</option>
+                  <option value="4">4 Adults</option>
+                </select>
+              </div>
+              <div class="booking-item">
+                <label for="children">Children</label>
+                <select class="form-select" name="children" id="children">
+                  <option value="0">0 Children</option>
+                  <option value="1">2 Children</option>
+                  <option value="2">3 Children</option>
+                </select>
+              </div>
+              <button type="submit" class="btn-pr">Check Availability</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section class="features">
+        <div class="container">
+          <div class="small-title">Hotel Feature</div>
+          <h3>Top Features</h3>
+          <p>
+            Designed to balance comfort, elegance and practical hospitality with
+            the essential amenities guests expect from a premium coastal resort.
+          </p>
+          <div class="feature-items">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="bi bi-usb-mini"></i>
+              </div>
+              <h4>Luxury Rooms</h4>
+              <p>
+                Beautifully styled rooms with premium bedding and refined
+                interior details.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="bi bi-cup-hot"></i>
+              </div>
+              <h4>Fine Dining</h4>
+              <p>
+                Fresh coastal cuisine, breakfast buffet service and all-day
+                dining options.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="bi bi-flower1"></i>
+              </div>
+              <h4>Spa Retreat</h4>
+              <p>
+                Relax with wellness treatments, private massage sessions and
+                sauna access.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="bi bi-car-front"></i>
+              </div>
+              <h4>Parking</h4>
+              <p>
+                Secure on-site parking with easy access to the lobby and guest
+                wings.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="about">
+        <div class="container">
+          <div class="about-img">
+            <img
+              class="about-main-image"
+              src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=900&q=80"
+              alt="Resort pool and outdoor luxury deck"
+            />
+            <img
+              class="about-float-image"
+              src="https://images.unsplash.com/photo-1578683010236-d716f9a3f461?auto=format&fit=crop&w=700&q=80"
+              alt="Elegant resort view with sea landscape"
+            />
+          </div>
+
+          <div class="about-card">
+            <div class="small-title02">Enjoy Your Stay</div>
+            <h2>We Provide Best Place To Enjoy Your Time</h2>
+            <p>
+              MercanS is crafted as a modern resort experience with calm
+              architecture, curated views and a service philosophy focused on
+              comfort and detail. The design language combines relaxed luxury
+              with clear, usable spaces.
+            </p>
+            <p>
+              From intimate suites to larger family rooms, every area is planned
+              for vacation comfort, quiet evenings and smooth guest flow from
+              booking to check-out.
+            </p>
+
+            <ul>
+              <li>Premium sea-view rooms</li>
+              <li>Professional room service</li>
+              <li>Wellness and spa facilities</li>
+              <li>Private dining experiences</li>
+            </ul>
+
+            <div class="booking-button">
+              <a href="#!">Discover More</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="counter">
+        <div class="container">
+          <div>
+            <div class="number">30</div>
+            <div class="text">Years Of Experience</div>
+          </div>
+          <div>
+            <div class="number">600</div>
+            <div class="text">New Bookings</div>
+          </div>
+          <div>
+            <div class="number">1500</div>
+            <div class="text">Happy Guests</div>
+          </div>
+          <div>
+            <div class="number">50</div>
+            <div class="text">Awards Win</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="rooms">
+        <div class="container">
+          <div class="small-title">Room Type</div>
+          <h3>Best Rooms</h3>
+          <p>
+            Choose from carefully styled room categories built around comfort,
+            natural light and a premium guest experience.
+          </p>
+
+          <div class="rooms-items">
+            <div class="rooms-card">
+              <div class="img">
+                <span class="badge-top">Popular</span>
+                <span class="badge-botton">$120 / Night</span>
+                <img
+                  src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&amp;fit=crop&amp;w=900&amp;q=80"
+                  alt="Superior room interior"
+                />
+              </div>
+              <div class="stars">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+              <h4>Superior Room</h4>
+              <div class="icons">
+                <ul>
+                  <li>
+                    <i class="bi bi-people"></i>
+                    <span>2 Guests</span>
+                  </li>
+                  <li>
+                    <i class="bi bi-usb-mini"></i>
+                    <span> 1 King Bed</span>
+                  </li>
+                  <li>
+                    <i class="bi bi-wifi"></i>
+                    <span>Free WiFi</span>
+                  </li>
+                </ul>
+              </div>
+              <p>
+                Elegant stay solution for couples seeking a calm room with
+                modern finishes and warm textures.
+              </p>
+              <div class="booking-button">
+                <a href="#!">Book Now</a>
+              </div>
+            </div>
+
+            <div class="rooms-card">
+              <div class="img">
+                <span class="badge-top">Featured</span>
+                <span class="badge-botton">$180 / Night</span>
+                <img
+                  src="https://images.unsplash.com/photo-1505692952047-1a78307da8f2?auto=format&amp;fit=crop&amp;w=900&amp;q=80"
+                  alt="Deluxe room with contemporary design"
+                />
+              </div>
+              <div class="stars">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+              <h4>Deluxe Suite</h4>
+              <div class="icons">
+                <ul>
+                  <li>
+                    <i class="bi bi-people"></i>
+                    <span> 3 Guests</span>
+                  </li>
+                  <li>
+                    <i class="bi bi-droplet"></i>
+                    <span> Private Bath</span>
+                  </li>
+                  <li>
+                    <i class="bi bi-water"></i>
+                    <span>Sea View</span>
+                  </li>
+                </ul>
+              </div>
+              <p>
+                A refined suite with extra lounge area, better views and
+                elevated materials throughout the room.
+              </p>
+              <div class="booking-button">
+                <a href="#!">Book Now</a>
+              </div>
+            </div>
+
+            <div class="rooms-card">
+              <div class="img">
+                <span class="badge-top">Luxury</span>
+                <span class="badge-botton">$220 / Night</span>
+                <img
+                  src="https://images.unsplash.com/photo-1522798514-97ceb8c4f1c8?auto=format&amp;fit=crop&amp;w=900&amp;q=80"
+                  alt="Family room with resort atmosphere"
+                />
+              </div>
+              <div class="stars">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+              <h4>Family Room</h4>
+              <div class="icons">
+                <ul>
+                  <li>
+                    <i class="bi bi-people"></i>
+                    <span>4 Guests</span>
+                  </li>
+                  <li>
+                    <i class="bi bi-usb-mini"></i>
+                    <span>2 Beds</span>
+                  </li>
+                  <li>
+                    <i class="bi bi-cup-hot"></i>
+                    <span>Breakfast</span>
+                  </li>
+                </ul>
+              </div>
+              <p>
+                Spacious layout for small families with a balanced mix of
+                comfort, function and resort charm.
+              </p>
+              <div class="booking-button">
+                <a href="#!">Discover More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="plans">
+        <div class="container">
+          <div class="small-title">Pricing Plan</div>
+          <h3>Choose Your Package</h3>
+          <p>
+            Flexible room packages with practical service layers for solo
+            guests, couples and premium vacation stays.
+          </p>
+
+          <div class="plans-items">
+            <div class="plans-card">
+              <div class="plan-icon01">
+                <i class="bi bi-briefcase"></i>
+              </div>
+              <h5>Standard Plan</h5>
+              <p>For short business or city stays</p>
+              <div class="price">156</div>
+              <div class="text">Per Night</div>
+              <ul>
+                <li>Breakfast included</li>
+                <li>Free high-speed WiFi</li>
+                <li>Daily room cleaning</li>
+                <li>Lobby support service</li>
+              </ul>
+              <div class="booking-button">
+                <a href="#!">Choose Plan</a>
+              </div>
+            </div>
+            <div class="plans-card">
+              <div class="plan-icon01">
+                <i class="bi bi-star-fill"></i>
+              </div>
+              <h5>Premium Plan</h5>
+              <p>Best value for comfort and extras</p>
+              <div class="price">299</div>
+              <div class="text">Per Night</div>
+              <ul>
+                <li>Sea-view selected room</li>
+                <li>Complimentary breakfast</li>
+                <li>Spa access included</li>
+                <li>Priority room service</li>
+              </ul>
+              <div class="booking-button">
+                <a href="#!">Choose Plan</a>
+              </div>
+            </div>
+            <div class="plans-card">
+              <div class="plan-icon01">
+                <i class="bi bi-gem"></i>
+              </div>
+              <h5>Luxury Plan</h5>
+              <p>High-end leisure package</p>
+              <div class="price">350</div>
+              <div class="text">Per Night</div>
+              <ul>
+                <li>Premium suite experience</li>
+                <li>Airport transfer option</li>
+                <li>Private dining reservation</li>
+                <li>Late check-out availability</li>
+              </ul>
+              <div class="booking-button">
+                <a href="#!">Choose Plan</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="partners">
+        <div class="container">
+          <h3>Our Awesome Partners</h3>
+          <div class="partner-items">
+            <div class="partner-item">STRATO</div>
+            <div class="partner-item">Intesa</div>
+            <div class="partner-item">CNTEX</div>
+            <div class="partner-item">Califor</div>
+            <div class="partner-item">Fortuna</div>
+            <div class="partner-item">Atlas</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="team">
+        <div class="container">
+          <div class="small-title">Expert Team</div>
+          <h3>Meet Our Team</h3>
+          <p>
+            A hospitality team focused on guest comfort, operational quality and
+            warm, efficient communication.
+          </p>
+          <div class="team-items">
+            <div class="team-card">
+              <div class="img">
+                <img
+                  src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&amp;fit=crop&amp;w=800&amp;q=80"
+                  alt="Team member Sarah Wilson"
+                />
+                <div class="social">
+                  <a href="#!"><i class="bi bi-facebook"></i></a>
+                  <a href="#!"><i class="bi bi-twitter"></i></a>
+                  <a href="#!"><i class="bi bi-instagram"></i></a>
+                </div>
+              </div>
+              <div class="name">Sarah Wilson</div>
+              <div class="role">General Manager</div>
+              <p>
+                Leads guest experience and resort operations with a
+                quality-first approach.
+              </p>
+            </div>
+            <div class="team-card">
+              <div class="img">
+                <img
+                  src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&amp;fit=crop&amp;w=800&amp;q=80"
+                  alt="Team member James Oliver"
+                />
+                <div class="social">
+                  <a href="#!"><i class="bi bi-facebook"></i></a>
+                  <a href="#!"><i class="bi bi-twitter"></i></a>
+                  <a href="#!"><i class="bi bi-instagram"></i></a>
+                </div>
+              </div>
+              <div class="name">James Oliver</div>
+              <div class="role">Head Chef</div>
+              <p>
+                Curates seasonal dishes and premium dining experiences across
+                the resort.
+              </p>
+            </div>
+            <div class="team-card">
+              <div class="img">
+                <img
+                  src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&amp;fit=crop&amp;w=800&amp;q=80"
+                  alt="Team member Emily Clark"
+                />
+                <div class="social">
+                  <a href="#!"><i class="bi bi-facebook"></i></a>
+                  <a href="#!"><i class="bi bi-twitter"></i></a>
+                  <a href="#!"><i class="bi bi-instagram"></i></a>
+                </div>
+              </div>
+              <div class="name">Emily Clark</div>
+              <div class="role">Spa Director</div>
+              <p>
+                Shapes wellness programs and private retreat treatments for
+                guests.
+              </p>
+            </div>
+            <div class="team-card">
+              <div class="img">
+                <img
+                  src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&amp;fit=crop&amp;w=800&amp;q=80"
+                  alt="Team member Ryan Scott"
+                />
+                <div class="social">
+                  <a href="#!"><i class="bi bi-facebook"></i></a>
+                  <a href="#!"><i class="bi bi-twitter"></i></a>
+                  <a href="#!"><i class="bi bi-instagram"></i></a>
+                </div>
+              </div>
+              <div class="name">Ryan Scott</div>
+              <div class="role">Guest Relations</div>
+              <p>
+                Supports reservations, room guidance and personalized stay
+                coordination.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="special">
+        <div class="container">
+          <div class="small-title">Special Offer</div>
+          <h3>Get Discount 25% Off Any Room Package</h3>
+          <p>
+            Book selected packages this season and enjoy an upgraded stay with
+            limited-time rates.
+          </p>
+          <div class="booking-button">
+            <a href="#!">Book Your Stay</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="gallery">
+        <div class="container">
+          <div class="small-title">Our Gallery</div>
+          <h3>Resort Highlights</h3>
+          <p>
+            A preview of our rooms, pool deck, sea-facing moments and carefully
+            designed resort spaces.
+          </p>
+          <div class="gallery-items">
+            <img
+              src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&amp;fit=crop&amp;w=900&amp;q=80"
+              alt="Resort landscape view"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1519046904884-53103b34b206?auto=format&amp;fit=crop&amp;w=900&amp;q=80"
+              alt="Palm trees and pool"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&amp;fit=crop&amp;w=900&amp;q=80"
+              alt="Outdoor lounge area"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&amp;fit=crop&amp;w=900&amp;q=80"
+              alt="Luxury resort balcony"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?auto=format&amp;fit=crop&amp;w=900&amp;q=80"
+              alt="Beach and sea view"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&amp;fit=crop&amp;w=900&amp;q=80"
+              alt="Luxury room decor"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&amp;fit=crop&amp;w=900&amp;q=80"
+              alt="Relaxing guest room interior"
+            />
+            <img
+              src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&amp;fit=crop&amp;w=900&amp;q=80"
+              alt="Tropical outdoor sitting area"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="video">
+        <div class="container">
+          <div class="small-title">Let’s Check Our Video</div>
+          <h3>Experience The Atmosphere</h3>
+          <p>
+            See the architecture, surroundings and curated spaces that define
+            the MercanS resort experience.
+          </p>
+          <div class="video-card">
+            <img
+              src="https://images.unsplash.com/photo-1499793983690-e29da59ef1c2?auto=format&amp;fit=crop&amp;w=1400&amp;q=80"
+              alt="Resort video preview"
+            />
+            <div class="icon"><i class="bi bi-play-fill"></i></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="services">
+        <div class="container">
+          <div class="small-title">Best Service</div>
+          <h3>Signature Services</h3>
+          <p>
+            Comfort-centered service layers built to make short stays and longer
+            vacations equally smooth.
+          </p>
+          <div class="services-items">
+            <div class="services-card">
+              <div class="img">
+                <img
+                  src="https://images.unsplash.com/photo-1445019980597-93fa8acb246c?auto=format&amp;fit=crop&amp;w=900&amp;q=80"
+                  alt="Room service breakfast"
+                />
+              </div>
+              <div class="title">Room Service</div>
+              <p>
+                Fast in-room dining and essentials delivery available throughout
+                the day.
+              </p>
+              <div class="booking-button">
+                <a href="#!">Read More</a>
+              </div>
+            </div>
+            <div class="services-card">
+              <div class="img">
+                <img
+                  src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&amp;fit=crop&amp;w=900&amp;q=80"
+                  alt="Restaurant and chef service"
+                />
+              </div>
+              <div class="title">Restaurant</div>
+              <p>
+                Refined local and international flavors prepared with fresh
+                ingredients.
+              </p>
+              <div class="booking-button">
+                <a href="#!">Read More</a>
+              </div>
+            </div>
+            <div class="services-card">
+              <div class="img">
+                <img
+                  src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&amp;fit=crop&amp;w=900&amp;q=80"
+                  alt="Swimming pool and sun lounge"
+                />
+              </div>
+              <div class="title">Swimming Pool</div>
+              <p>
+                Relax by the pool with sun beds, calm scenery and resort
+                refreshments.
+              </p>
+              <div class="booking-button">
+                <a href="#!">Read More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="testimonial">
+        <div class="container">
+          <div class="small-title">Testimonials</div>
+          <h3>What Client Says</h3>
+          <p>
+            Real impressions from guests who experienced the rooms, service and
+            atmosphere first-hand.
+          </p>
+          <div class="testimonial-items">
+            <div class="testimonial-card">
+              <div class="icons">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+              <p>
+                The room design felt premium without being overloaded. The pool
+                area, breakfast quality and overall cleanliness were excellent.
+                Very balanced resort experience.
+              </p>
+              <div class="person">
+                <div class="person-img">
+                  <img
+                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&amp;fit=crop&amp;w=300&amp;q=80"
+                    alt="Guest Olivia Carter"
+                  />
+                </div>
+                <div class="person-info">
+                  <div class="name">Olivia Carter</div>
+                  <div class="role">Travel Blogger</div>
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <div class="icons">
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+                <i class="bi bi-star-fill"></i>
+              </div>
+              <p>
+                What stood out most was the clean layout of the property and the
+                staff’s attention to details. It felt modern, calm and highly
+                comfortable from check-in to departure.
+              </p>
+              <div class="person">
+                <div class="person-img">
+                  <img
+                    src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&amp;fit=crop&amp;w=300&amp;q=80"
+                    alt="Guest Daniel Brooks"
+                  />
+                </div>
+                <div class="person-info">
+                  <div class="name">Daniel Brooks</div>
+                  <div class="role">Business Traveler</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="blog">
+        <div class="container">
+          <div class="small-title">Hotel News</div>
+          <h3>Latest News & Blog</h3>
+          <p>
+            Stay updated with travel notes, destination tips and resort
+            highlights for planning your next visit.
+          </p>
+          <div class="blog-items">
+            <div class="blog-card">
+              <div class="img">
+                <img
+                  src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&amp;fit=crop&amp;w=900&amp;q=80"
+                  alt="Beach travel blog post"
+                />
+              </div>
+              <div class="blog-info">May 12, 2026 · Travel Tips</div>
+              <div class="title">How To Plan A Relaxing Coastal Escape</div>
+              <p>
+                Simple planning tips for building a calm and efficient vacation
+                around comfort and local experiences.
+              </p>
+              <div class="booking-button">
+                <a href="#!">Read More</a>
+              </div>
+            </div>
+            <div class="blog-card">
+              <div class="img">
+                <img
+                  src="https://images.unsplash.com/photo-1522798514-97ceb8c4f1c8?auto=format&amp;fit=crop&amp;w=900&amp;q=80"
+                  alt="Luxury suite blog post"
+                />
+              </div>
+              <div class="blog-info">May 18, 2026 · Resort Guide</div>
+              <div class="title">Choosing The Right Suite For Your Stay</div>
+              <p>
+                Understand room categories, view options and package differences
+                before booking your stay.
+              </p>
+              <div class="booking-button">
+                <a href="#!">Read More</a>
+              </div>
+            </div>
+            <div class="blog-card">
+              <div class="img">
+                <img
+                  src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&amp;fit=crop&amp;w=900&amp;q=80"
+                  alt="Island destination blog post"
+                />
+              </div>
+              <div class="blog-info">May 25, 2026 · Destination</div>
+              <div class="title">Best Local Spots Around The Resort</div>
+              <p>
+                Explore coastal viewpoints, dining suggestions and nearby places
+                that elevate your trip.
+              </p>
+              <div class="booking-button">
+                <a href="#!">Read More</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="newsletter">
+        <div class="container">
+          <div class="newsletter-title">
+            <h3>Subscribe To Our Newsletter</h3>
+            <p>
+              Get seasonal offers, room package updates and resort news
+              delivered to your inbox
+            </p>
+          </div>
+          <div class="newsletter-form">
+            <form action="">
+              <input type="email" placeholder="Enter Your Email" required />
+              <button class="submit">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-top">
+          <div>
+            <h4><i class="bi bi-star-fill"></i> MercanS</h4>
+            <p>
+              Modern coastal hospitality with clean architecture, premium
+              comfort and balanced resort experiences for couples, solo
+              travelers and families.
+            </p>
+          </div>
+          <div>
+            <h4>Quick Links</h4>
+            <ul>
+              <li>Home</li>
+              <li>Rooms</li>
+              <li>Gallery</li>
+              <li>Services</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Support</h4>
+            <ul>
+              <li>Booking Help</li>
+              <li>Privacy Policy</li>
+              <li>Terms & Conditions</li>
+              <li>FAQs</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Contact Info</h4>
+            <ul>
+              <li>123 Ocean Drive, Bali</li>
+              <li>+1 (555) 123-4567</li>
+              <li>info@mercandhotel.com</li>
+              <li>Open 24/7 Reception</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          © 2026 MercanS Hotel. All Rights Reserved.
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,814 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard - Bootstrap 5.3</title>
+
+    <!-- Bootstrap 5.3 CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #f0f2f5;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
+
+      /* Sidebar Styles */
+      .sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: 260px;
+        background: #0f0f1a;
+        color: white;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        overflow-y: auto;
+      }
+
+      .sidebar-header {
+        padding: 1.5rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+      }
+
+      .sidebar-header h3 {
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin: 0;
+        color: #fff;
+      }
+
+      .sidebar-header p {
+        font-size: 0.7rem;
+        color: rgba(255, 255, 255, 0.5);
+        margin-top: 0.5rem;
+        margin-bottom: 0;
+      }
+
+      .nav-menu {
+        padding: 1rem 0;
+      }
+
+      .nav-item {
+        margin: 0.25rem 1rem;
+        border-radius: 0.5rem;
+        transition: all 0.2s;
+      }
+
+      .nav-item:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      .nav-item.active {
+        background: #8f94fb;
+      }
+
+      .nav-link {
+        color: rgba(255, 255, 255, 0.8);
+        padding: 0.7rem 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        text-decoration: none;
+        font-size: 0.9rem;
+      }
+
+      .nav-link:hover {
+        color: white;
+      }
+
+      .nav-link i {
+        width: 24px;
+        font-size: 1rem;
+      }
+
+      /* Main Content */
+      .main-content {
+        margin-left: 260px;
+        padding: 1.5rem;
+      }
+
+      /* Top Bar */
+      .top-bar {
+        background: white;
+        border-radius: 0.75rem;
+        padding: 0.75rem 1.5rem;
+        margin-bottom: 1.5rem;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .page-title {
+        font-size: 1.25rem;
+        font-weight: 600;
+        color: #1a1c2e;
+        margin: 0;
+      }
+
+      .user-menu {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .dropdown-toggle::after {
+        display: none;
+      }
+
+      .user-dropdown {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        cursor: pointer;
+        padding: 0.5rem;
+        border-radius: 2rem;
+        transition: background 0.2s;
+      }
+
+      .user-dropdown:hover {
+        background: #f8f9fa;
+      }
+
+      .user-avatar {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background: #8f94fb;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: bold;
+      }
+
+      .user-info-text {
+        text-align: right;
+      }
+
+      .user-info-text .user-name {
+        font-weight: 600;
+        font-size: 0.85rem;
+        color: #1a1c2e;
+        margin: 0;
+      }
+
+      .user-info-text .user-role {
+        font-size: 0.7rem;
+        color: #6c757d;
+        margin: 0;
+      }
+
+      /* Stat Cards */
+      .stat-card {
+        background: white;
+        border-radius: 1rem;
+        padding: 1.25rem;
+        transition: transform 0.2s;
+        border: none;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      }
+
+      .stat-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+
+      .stat-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 0.75rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.25rem;
+        margin-bottom: 1rem;
+      }
+
+      .stat-card h3 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin: 0;
+        color: #1a1c2e;
+      }
+
+      .stat-card p {
+        color: #6c757d;
+        margin: 0;
+        font-size: 0.8rem;
+      }
+
+      /* Chart Cards */
+      .chart-card {
+        background: white;
+        border-radius: 1rem;
+        padding: 1.25rem;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        height: 100%;
+      }
+
+      .chart-card h5 {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: #6c757d;
+        margin-bottom: 1rem;
+      }
+
+      /* Table Card */
+      .table-card {
+        background: white;
+        border-radius: 1rem;
+        padding: 1.25rem;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      }
+
+      .table-card h5 {
+        font-size: 0.95rem;
+        font-weight: 600;
+        color: #1a1c2e;
+        margin-bottom: 1rem;
+      }
+
+      .table th {
+        border-top: none;
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: #6c757d;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .table td {
+        font-size: 0.85rem;
+        vertical-align: middle;
+      }
+
+      .badge-success {
+        background-color: #d4edda;
+        color: #155724;
+        padding: 0.25rem 0.6rem;
+        border-radius: 2rem;
+        font-size: 0.7rem;
+        font-weight: 500;
+      }
+
+      .badge-warning {
+        background-color: #fff3cd;
+        color: #856404;
+        padding: 0.25rem 0.6rem;
+        border-radius: 2rem;
+        font-size: 0.7rem;
+        font-weight: 500;
+      }
+
+      .badge-info {
+        background-color: #d1ecf1;
+        color: #0c5460;
+        padding: 0.25rem 0.6rem;
+        border-radius: 2rem;
+        font-size: 0.7rem;
+        font-weight: 500;
+      }
+
+      /* Activity List */
+      .activity-item {
+        padding: 0.75rem;
+        border-left: 3px solid #4e54c8;
+        background: #f8f9fa;
+        margin-bottom: 0.75rem;
+        border-radius: 0.5rem;
+      }
+
+      .activity-item small {
+        font-size: 0.7rem;
+      }
+
+      .activity-item p {
+        font-size: 0.85rem;
+        margin: 0.25rem 0 0 0;
+      }
+
+      /* Progress Bar */
+      .progress-custom {
+        height: 6px;
+        background-color: #e9ecef;
+        border-radius: 3px;
+      }
+
+      .product-item {
+        margin-bottom: 1rem;
+      }
+
+      .product-item .d-flex {
+        margin-bottom: 0.25rem;
+      }
+
+      /* Custom Scrollbar */
+      .sidebar::-webkit-scrollbar {
+        width: 4px;
+      }
+
+      .sidebar::-webkit-scrollbar-track {
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      .sidebar::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Sidebar - Sol Sabit Menü -->
+    <div class="sidebar">
+      <div class="sidebar-header">
+        <h3><i class="fas fa-chart-line me-2"></i>AdminPanel</h3>
+        <p>Yönetim Paneli</p>
+      </div>
+      <div class="nav-menu">
+        <div class="nav-item active">
+          <a href="#" class="nav-link">
+            <i class="fas fa-tachometer-alt"></i>
+            <span>Dashboard</span>
+          </a>
+        </div>
+        <div class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="fas fa-box"></i>
+            <span>Ürünler</span>
+          </a>
+        </div>
+        <div class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="fas fa-shopping-cart"></i>
+            <span>Siparişler</span>
+          </a>
+        </div>
+        <div class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="fas fa-users"></i>
+            <span>Müşteriler</span>
+          </a>
+        </div>
+        <div class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="fas fa-chart-line"></i>
+            <span>Analitik</span>
+          </a>
+        </div>
+        <div class="nav-item">
+          <a href="#" class="nav-link">
+            <i class="fas fa-cog"></i>
+            <span>Ayarlar</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Top Bar - Profil ve Çıkış -->
+      <div class="top-bar">
+        <h4 class="page-title">Dashboard</h4>
+        <div class="user-menu">
+          <div class="dropdown">
+            <div
+              class="user-dropdown"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <div class="user-info-text">
+                <p class="user-name">Ahmet Yılmaz</p>
+                <p class="user-role">Administrator</p>
+              </div>
+              <div class="user-avatar">
+                <i class="fas fa-user"></i>
+              </div>
+            </div>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li>
+                <a class="dropdown-item" href="#"
+                  ><i class="fas fa-user-circle me-2"></i> Profilim</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" href="#"
+                  ><i class="fas fa-cog me-2"></i> Hesap Ayarları</a
+                >
+              </li>
+              <li><hr class="dropdown-divider" /></li>
+              <li>
+                <a class="dropdown-item text-danger" href="#"
+                  ><i class="fas fa-sign-out-alt me-2"></i> Çıkış Yap</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- İstatistik Kartları - 4'lü Grid -->
+      <div class="row g-3 mb-4">
+        <div class="col-sm-6 col-xl-3">
+          <div class="stat-card">
+            <div class="stat-icon" style="background: rgba(78, 84, 200, 0.1)">
+              <i class="fas fa-dollar-sign" style="color: #4e54c8"></i>
+            </div>
+            <h3>₺124.590</h3>
+            <p>Toplam Gelir</p>
+            <small class="text-success"
+              ><i class="fas fa-arrow-up"></i> %12.5 artış</small
+            >
+          </div>
+        </div>
+        <div class="col-sm-6 col-xl-3">
+          <div class="stat-card">
+            <div class="stat-icon" style="background: rgba(40, 167, 69, 0.1)">
+              <i class="fas fa-shopping-bag" style="color: #28a745"></i>
+            </div>
+            <h3>1.247</h3>
+            <p>Sipariş Sayısı</p>
+            <small class="text-success"
+              ><i class="fas fa-arrow-up"></i> %8.3 artış</small
+            >
+          </div>
+        </div>
+        <div class="col-sm-6 col-xl-3">
+          <div class="stat-card">
+            <div class="stat-icon" style="background: rgba(255, 193, 7, 0.1)">
+              <i class="fas fa-users" style="color: #ffc107"></i>
+            </div>
+            <h3>8.452</h3>
+            <p>Toplam Müşteri</p>
+            <small class="text-success"
+              ><i class="fas fa-arrow-up"></i> %5.2 artış</small
+            >
+          </div>
+        </div>
+        <div class="col-sm-6 col-xl-3">
+          <div class="stat-card">
+            <div class="stat-icon" style="background: rgba(220, 53, 69, 0.1)">
+              <i class="fas fa-eye" style="color: #dc3545"></i>
+            </div>
+            <h3>24.891</h3>
+            <p>Sayfa Görüntülenme</p>
+            <small class="text-success"
+              ><i class="fas fa-arrow-up"></i> %15.7 artış</small
+            >
+          </div>
+        </div>
+      </div>
+
+      <!-- Grafikler ve İstatistikler -->
+      <div class="row g-3 mb-4">
+        <!-- Sol: Satış Grafiği (Tablo bazlı) -->
+        <div class="col-lg-8">
+          <div class="chart-card">
+            <h5>
+              <i class="fas fa-chart-line me-2"></i> Aylık Satış Performansı
+            </h5>
+            <div class="table-responsive">
+              <table class="table table-sm">
+                <thead>
+                  <tr>
+                    <th>Ay</th>
+                    <th>Satış Tutarı</th>
+                    <th>Hedef</th>
+                    <th>Başarı Oranı</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Ocak</td>
+                    <td>₺12.500</td>
+                    <td>₺15.000</td>
+                    <td>
+                      <div class="progress-custom">
+                        <div
+                          class="progress-bar bg-primary"
+                          style="width: 83%; height: 6px; border-radius: 3px"
+                        ></div>
+                      </div>
+                      <small class="text-muted">83%</small>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Şubat</td>
+                    <td>₺15.000</td>
+                    <td>₺16.000</td>
+                    <td>
+                      <div class="progress-custom">
+                        <div
+                          class="progress-bar bg-primary"
+                          style="width: 94%; height: 6px; border-radius: 3px"
+                        ></div>
+                      </div>
+                      <small class="text-muted">94%</small>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Mart</td>
+                    <td>₺18.500</td>
+                    <td>₺18.000</td>
+                    <td>
+                      <div class="progress-custom">
+                        <div
+                          class="progress-bar bg-success"
+                          style="width: 103%; height: 6px; border-radius: 3px"
+                        ></div>
+                      </div>
+                      <small class="text-success">103%</small>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Nisan</td>
+                    <td>₺22.000</td>
+                    <td>₺20.000</td>
+                    <td>
+                      <div class="progress-custom">
+                        <div
+                          class="progress-bar bg-success"
+                          style="width: 110%; height: 6px; border-radius: 3px"
+                        ></div>
+                      </div>
+                      <small class="text-success">110%</small>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Mayıs</td>
+                    <td>₺28.000</td>
+                    <td>₺25.000</td>
+                    <td>
+                      <div class="progress-custom">
+                        <div
+                          class="progress-bar bg-success"
+                          style="width: 112%; height: 6px; border-radius: 3px"
+                        ></div>
+                      </div>
+                      <small class="text-success">112%</small>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>Haziran</td>
+                    <td>₺32.500</td>
+                    <td>₺30.000</td>
+                    <td>
+                      <div class="progress-custom">
+                        <div
+                          class="progress-bar bg-success"
+                          style="width: 108%; height: 6px; border-radius: 3px"
+                        ></div>
+                      </div>
+                      <small class="text-success">108%</small>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <!-- Sağ: Kategori Dağılımı -->
+        <div class="col-lg-4">
+          <div class="chart-card">
+            <h5><i class="fas fa-chart-pie me-2"></i> Kategori Dağılımı</h5>
+            <div class="mt-3">
+              <div class="d-flex justify-content-between mb-2">
+                <span>Elektronik</span>
+                <span class="fw-bold">45%</span>
+              </div>
+              <div class="progress-custom mb-3">
+                <div
+                  class="progress-bar bg-primary"
+                  style="width: 45%; height: 8px; border-radius: 4px"
+                ></div>
+              </div>
+              <div class="d-flex justify-content-between mb-2">
+                <span>Bilgisayar</span>
+                <span class="fw-bold">25%</span>
+              </div>
+              <div class="progress-custom mb-3">
+                <div
+                  class="progress-bar bg-success"
+                  style="width: 25%; height: 8px; border-radius: 4px"
+                ></div>
+              </div>
+              <div class="d-flex justify-content-between mb-2">
+                <span>Aksesuar</span>
+                <span class="fw-bold">20%</span>
+              </div>
+              <div class="progress-custom mb-3">
+                <div
+                  class="progress-bar bg-warning"
+                  style="width: 20%; height: 8px; border-radius: 4px"
+                ></div>
+              </div>
+              <div class="d-flex justify-content-between mb-2">
+                <span>Diğer</span>
+                <span class="fw-bold">10%</span>
+              </div>
+              <div class="progress-custom mb-3">
+                <div
+                  class="progress-bar bg-info"
+                  style="width: 10%; height: 8px; border-radius: 4px"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Son Siparişler Tablosu -->
+      <div class="table-card mb-3">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <h5><i class="fas fa-clock me-2"></i> Son Siparişler</h5>
+          <a href="#" class="text-decoration-none small"
+            >Tümünü Gör <i class="fas fa-arrow-right ms-1"></i
+          ></a>
+        </div>
+        <div class="table-responsive">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Sipariş No</th>
+                <th>Müşteri</th>
+                <th>Ürün</th>
+                <th>Tutar</th>
+                <th>Durum</th>
+                <th>İşlem</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="fw-semibold">#ORD-001</span></td>
+                <td>Mehmet Demir</td>
+                <td>Akıllı Telefon X</td>
+                <td>₺12.999</td>
+                <td><span class="badge-success">Tamamlandı</span></td>
+                <td>
+                  <a href="#" class="text-primary text-decoration-none small"
+                    >Detay</a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td><span class="fw-semibold">#ORD-002</span></td>
+                <td>Ayşe Yılmaz</td>
+                <td>Ultrabook Pro</td>
+                <td>₺24.499</td>
+                <td><span class="badge-warning">Hazırlanıyor</span></td>
+                <td>
+                  <a href="#" class="text-primary text-decoration-none small"
+                    >Detay</a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td><span class="fw-semibold">#ORD-003</span></td>
+                <td>Ali Kaya</td>
+                <td>Kablosuz Kulaklık</td>
+                <td>₺3.299</td>
+                <td><span class="badge-success">Tamamlandı</span></td>
+                <td>
+                  <a href="#" class="text-primary text-decoration-none small"
+                    >Detay</a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td><span class="fw-semibold">#ORD-004</span></td>
+                <td>Zeynep Çelik</td>
+                <td>Akıllı Saat Pro</td>
+                <td>₺4.599</td>
+                <td><span class="badge-info">Kargoda</span></td>
+                <td>
+                  <a href="#" class="text-primary text-decoration-none small"
+                    >Detay</a
+                  >
+                </td>
+              </tr>
+              <tr>
+                <td><span class="fw-semibold">#ORD-005</span></td>
+                <td>Emre Şahin</td>
+                <td>Oyun Konsolu</td>
+                <td>₺11.999</td>
+                <td><span class="badge-warning">Hazırlanıyor</span></td>
+                <td>
+                  <a href="#" class="text-primary text-decoration-none small"
+                    >Detay</a
+                  >
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Son Aktiviteler ve Popüler Ürünler -->
+      <div class="row g-3">
+        <div class="col-md-6">
+          <div class="table-card">
+            <h5><i class="fas fa-bell me-2"></i> Son Aktiviteler</h5>
+            <div class="activity-item">
+              <small class="text-muted"
+                ><i class="far fa-clock me-1"></i> 5 dakika önce</small
+              >
+              <p>Yeni sipariş alındı <strong>#ORD-006</strong></p>
+            </div>
+            <div class="activity-item">
+              <small class="text-muted"
+                ><i class="far fa-clock me-1"></i> 1 saat önce</small
+              >
+              <p>Yeni müşteri kaydı: <strong>Elif Demirtaş</strong></p>
+            </div>
+            <div class="activity-item">
+              <small class="text-muted"
+                ><i class="far fa-clock me-1"></i> 3 saat önce</small
+              >
+              <p>Ürün stoğu güncellendi: <strong>Akıllı Telefon X</strong></p>
+            </div>
+            <div class="activity-item">
+              <small class="text-muted"
+                ><i class="far fa-clock me-1"></i> 5 saat önce</small
+              >
+              <p>İade talebi oluşturuldu: <strong>#RTN-023</strong></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="table-card">
+            <h5><i class="fas fa-fire me-2"></i> Popüler Ürünler</h5>
+            <div class="product-item">
+              <div class="d-flex justify-content-between">
+                <span>Akıllı Telefon X</span>
+                <span class="fw-semibold">245 satış</span>
+              </div>
+              <div class="progress-custom mt-1">
+                <div
+                  class="progress-bar bg-primary"
+                  style="width: 85%; height: 6px; border-radius: 3px"
+                ></div>
+              </div>
+            </div>
+            <div class="product-item mt-3">
+              <div class="d-flex justify-content-between">
+                <span>Kablosuz Kulaklık</span>
+                <span class="fw-semibold">312 satış</span>
+              </div>
+              <div class="progress-custom mt-1">
+                <div
+                  class="progress-bar bg-success"
+                  style="width: 92%; height: 6px; border-radius: 3px"
+                ></div>
+              </div>
+            </div>
+            <div class="product-item mt-3">
+              <div class="d-flex justify-content-between">
+                <span>Ultrabook Pro</span>
+                <span class="fw-semibold">178 satış</span>
+              </div>
+              <div class="progress-custom mt-1">
+                <div
+                  class="progress-bar bg-info"
+                  style="width: 62%; height: 6px; border-radius: 3px"
+                ></div>
+              </div>
+            </div>
+            <div class="product-item mt-3">
+              <div class="d-flex justify-content-between">
+                <span>Akıllı Saat Pro</span>
+                <span class="fw-semibold">156 satış</span>
+              </div>
+              <div class="progress-custom mt-1">
+                <div
+                  class="progress-bar bg-warning"
+                  style="width: 54%; height: 6px; border-radius: 3px"
+                ></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle (sadece dropdown için) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
